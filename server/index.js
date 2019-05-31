@@ -14,11 +14,13 @@ server.use(parser.urlencoded({extended:true}))
 server.use(express.static(path.join(__dirname, '../dist')))
 server.use(cors())
 
-server.use('/nordstrom', proxy({
-  target: 'localhost:4005',
+server.use('/', proxy({
+  target: 'localhost:3000',
   router: {
-    '/navbar': "http://localhost:3000",
-    '/morelooks': 'http://localhost:4000',
+    '/navbar': "http://localhost:3001",
+    '/productDescription': "http://localhost:3002",
+    '/morelooks': 'http://localhost:4003',
+    '/reviews': 'http://localhost:3004',
   },
   changeOrigin: true
 }))

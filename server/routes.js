@@ -7,12 +7,12 @@ router
   .get(controller.navbar)
 
 router
-  .route('/navbar/:_id')
+  .route('/navbar/navbar/:_id')
   .get(controller.navbarid)
 
-router
-  .route('/search/:term')
-  .get(controller.navbarterms)
+// router
+//   .route('/navbar/search/:term')
+//   .get(controller.navbarterms)
 
 router
   .route('/morelooks')
